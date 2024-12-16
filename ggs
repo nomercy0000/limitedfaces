@@ -1,0 +1,37 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Nomercy Script",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = " Limted Faces",
+   LoadingSubtitle = "by nomercy",
+    ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Nomercy Hub"
+   },
+    Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD  
+   },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+      Title = "Key System",
+      Subtitle = "Faces",
+      Note = "Join discord server for key | https://discord.gg/JG2Zc4Ewgb", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"sfdg@dfghA@fdscx!3534d"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("Home", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+local Button = MainTab:CreateButton({
+   Name = "Free Limited Faces",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxHackerProLuaStuff/avatar-editor-thing/main/headless.lua"))()
+   end,
+})
